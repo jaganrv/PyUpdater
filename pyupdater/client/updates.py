@@ -274,7 +274,7 @@ DEL "%~f0"
             # file-without-a-visible-command-prompt/
             vbs.write(
                 'CreateObject("Wscript.Shell").Run """" '
-                '& WScript.Arguments(0) & """", 0, False'
+                '& WScript.Arguments(0) & """", 0, True'
             )
         log.debug("Starting update batch file")
         win_run("wscript.exe", [self.vbs_file, self.bat_file], admin=needs_admin)
@@ -333,7 +333,7 @@ DEL "%~f0"
             # file-without-a-visible-command-prompt/
             vbs.write(
                 'CreateObject("Wscript.Shell").Run """" '
-                '& WScript.Arguments(0) & """", 0, False'
+                '& WScript.Arguments(0) & """", 0, True'
             )
         log.debug("Starting update batch file")
         win_run("wscript.exe", [self.vbs_file, self.bat_file], admin=needs_admin)
