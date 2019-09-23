@@ -144,7 +144,7 @@ class FileDownloader(object):
                 cert_reqs=str("CERT_REQUIRED"), ca_certs=certifi.where()
             )
         else:
-            _http = urllib3.PoolManager()
+            _http = urllib3.PoolManager(cert_reqs='CERT_NONE', assert_hostname=False)
 
         if self.headers:
             _headers = urllib3.util.make_headers(**self.headers)
